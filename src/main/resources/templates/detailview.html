@@ -1,0 +1,145 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Getting Started: Serving Web Content</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" />
+<link rel="stylesheet" th:href="@{/css/bootstrapValidator.min.css}" />
+<script th:src="@{/js/jquery-1.11.2.min.js}"></script>
+<script th:src="@{/js/bootstrap.min.js}"></script>
+<script th:src="@{/js/formvalidate.js}"></script>
+<script th:src="@{/js/validator.js}"></script>
+<script th:src="@{/js/bootstrapValidator.min.js}"></script>
+
+</head>
+<body>
+	<form data-toggle="validator" role="form" id="userInfoForm"
+		th:action="${action}" method="post">
+		<h2>User Details</h2>
+		<div class="row">
+			<div class="col-sm-2">
+				<label class="control-label ">Name</label>
+
+			</div>
+			<div class="col-sm-3 form-group">
+				<div>
+					<div class='input-group'>
+						<span class="input-group-addon"> <span
+							class="glyphicon glyphicon-user"></span>
+						</span> <input type="text" class="form-control" id="userName"
+							name="userName" th:value="${userInfo.userName}" />
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-2">
+				<label class="control-label">Age</label>
+			</div>
+			<div class="col-sm-3 form-group">
+				<div>
+					<div class='input-group date' id='datetimepicker1'>
+						<span class="input-group-addon"> <span
+							class="glyphicon glyphicon-calendar"></span>
+						</span> <input type="text" class="form-control" name="age" id="age"
+							th:value="${userInfo.age}" />
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-sm-2">
+				<label class="control-label ">Email</label>
+
+			</div>
+			<div class="col-sm-3 form-group">
+				<div>
+					<div class='input-group'>
+						<span class="input-group-addon"> <span
+							class="glyphicon glyphicon-envelope"></span>
+						</span> <input type="text" class="form-control" id="emailAddress"
+							name="emailAddress" th:value="${userInfo.emailAddress}" />
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-2">
+				<label class="control-label">Mobile</label>
+			</div>
+			<div class="col-sm-3 form-group">
+				<div>
+					<div class='input-group date'>
+						<span class="input-group-addon"> <span
+							class="glyphicon glyphicon-phone"></span>
+						</span> <input type="text" class="form-control" name="mobile" id="mobile"
+							th:value="${userInfo.mobile}" />
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-sm-2">
+				<label class="control-label ">Street</label>
+
+			</div>
+			<div class="col-sm-3 form-group">
+				<div>
+					<div class='input-group'>
+						<span class="input-group-addon"> <span
+							class="glyphicon glyphicon-road"></span>
+						</span> <input type="text" class="form-control" id="addressInfo.street" name="street"
+							th:value="${userInfo.addressInfo.street}" />
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-2">
+				<label class="control-label">City</label>
+			</div>
+			<div class="col-sm-3 form-group">
+				<div>
+					<div class='input-group date'>
+						<span class="input-group-addon"> <span
+							class="glyphicon glyphicon-home"></span>
+						</span> <input type="text" class="form-control" name="addressInfo.city" id="city"
+							th:value="${userInfo.addressInfo.city}" />
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="col-sm-2">
+				<label class="control-label ">Pin Code</label>
+
+			</div>
+			<div class="col-sm-3 form-group">
+				<div>
+					<div class='input-group'>
+						<span class="input-group-addon"> <span
+							class="glyphicon glyphicon-road"></span>
+						</span> <input type="text" class="form-control" id="addressInfo.pin" name="pin"
+							th:value="${userInfo.addressInfo.pin}" />
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<input type="hidden" th:value="${userInfo.userId}" name="userId" id="userId"/>
+		<input type="hidden" th:value="${userInfo.addressInfo.addressId}" name="addressInfo.addressId" id="addressInfo.addressId"/>
+		<br />
+		<div class="row">
+			<div class="col-sm-2">
+				<input type="submit" class="btn btn-primary btn submitBTN"
+					value="Save" id="nextbutton"
+					style="font-weight: bold; width: 130px" />
+			</div>
+
+			<div class="col-sm-2">
+				<a type="button" class="btn btn-default" href="/userList"
+					style="font-weight: bold; width: 130px">Cancel</a>
+			</div>
+		</div>
+	</form>
+	
+</body>
+</html>
