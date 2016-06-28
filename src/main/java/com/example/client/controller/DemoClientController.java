@@ -54,7 +54,7 @@ public class DemoClientController {
 	@RequestMapping(value="/deleteUser/{userId}")
 	public String deleteUserDetail(@PathVariable("userId") long id, Model model) throws Exception{
 		UserService service = new UserServiceImpl();
-//		service.deleteUserInfo(id);
+		service.deleteUserInfo(id);
 		List<UserInfo> userList = service.getUserList();
 		model.addAttribute("userList", userList);
 		return "listview";

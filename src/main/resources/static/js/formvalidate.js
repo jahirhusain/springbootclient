@@ -36,34 +36,33 @@ $(document).ready(function() {
                         },
                     }
                 },
-                street: {
+                "addressInfo.street": {
                     validators: {
                         notEmpty: {
                             message: 'Street is required'
                         }
                     }
                 },
-                city: {
+                "addressInfo.city": {
                     validators: {
                         notEmpty: {
                             message: 'City is required'
                         }
                     }
                 },
-                pin: {
+                "addressInfo.pin": {
                     validators: {
                         notEmpty: {
                             message: 'Pin is required'
                         },
                         regexp: {
                             regexp: /^[0-9]*$/,
-                            message: 'Age can consist only numbers'
+                            message: 'Pin can consist only numbers'
                         }
                     }
                 }
             }
         }).on('success.form.bv', function(e) {
-            e.preventDefault();
             var $form = $(e.target);
             var bv = $form.data('bootstrapValidator');
         });
